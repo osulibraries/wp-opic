@@ -35,8 +35,8 @@ function opic_get_avatar($avatar, $id_or_email, $size, $default){
   }
   
   if($name_n){
-    //round up to nearest 50px
-    $width = ceil(($size+50/2)/50)*50;
+    //round up to nearest 50px, up to 400
+    $width = min(400, ceil(($size+50/2)/50)*50);
     $opic_url = "https://opic.osu.edu/{$name_n}?width={$width}";
     $avatar = preg_replace("/src='([^']+)'/", "src='$opic_url'", $avatar);
   }
