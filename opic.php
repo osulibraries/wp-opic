@@ -45,5 +45,40 @@ function opic_get_avatar($avatar, $id_or_email, $size, $default){
 }
 
 
+function opic_avatar_options($user){
+  if(preg_match('/[^@]+@osu\.edu$/', $user->user_email, $matches)):
+    $opic_img_tag = get_avatar($matches[0]);
+    echo <<<HTML
+      <h3>Profile Picture</h3>
+      
+      <table class="form-table">
+        <tr>
+          <th><label>Your Opic</label></th>
+          <td width="100">
+            {$opic_img_tag}
+          </td>
+          <td>
+            Your Opic is a graphical representation of you that shows because <br/>
+            you are affiliated with The Ohio State University.
+            <br/><br/>
+            For more information about Opic, please refer to the <a href="https://opic.osu.edu/faq" target="_blank">Opic FAQ</a>
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <td></td>
+          <td>
+              <a class="button" href="https://opic.osu.edu" target="_blank">Update your Opic today &raquo;</a>
+          </td>
+        </tr>
+      </table>
+HTML;
+  endif;
+  }
+
+
 
 add_filter('get_avatar','opic_get_avatar', null, 5);
+
+add_action('show_user_profile', 'opic_avatar_options');
+add_action('edit_user_profile', 'opic_avatar_options');
