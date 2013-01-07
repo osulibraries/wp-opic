@@ -56,19 +56,12 @@ function opic_avatar_options($user){
           <th><label>Your Opic</label></th>
           <td width="100">
             {$opic_img_tag}
+            <p><a class="button" href="https://opic.osu.edu/" target="_blank">Update Opic</a></p>
           </td>
           <td>
-            Your Opic is a graphical representation of you that shows because <br/>
-            you are affiliated with The Ohio State University.
-            <br/><br/>
-            For more information about Opic, please refer to the <a href="https://opic.osu.edu/faq" target="_blank">Opic FAQ</a>
-          </td>
-        </tr>
-        <tr>
-          <th></th>
-          <td></td>
-          <td>
-              <a class="button" href="https://opic.osu.edu" target="_blank">Update your Opic today &raquo;</a>
+            <p><strong>What's an Opic?</strong><br />It’s the avatar that appears beside your name whenever you post or leave a comment on this site.</p>
+            <p><strong>How do I update my Opic?</strong><br />Visit the official <a href="https://opic.osu.edu/">Opic</a> site to manage your Opic.</p>
+            <p><strong>Where can I learn more?</strong><br />Please refer to the <a href="https://opic.osu.edu/faq" target="_blank">Opic FAQ</a>.</p>
           </td>
         </tr>
       </table>
