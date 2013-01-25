@@ -69,9 +69,13 @@ HTML;
   endif;
   }
 
+function opic_default_avatar_select($avatar_list){
+  $avatar_list = "<i>Default settings are not enabled while Opic plugin is active.";
+  return $avatar_list;
+}
 
 
 add_filter('get_avatar','opic_get_avatar', null, 5);
-
+add_filter('default_avatar_select','opic_default_avatar_select');
 add_action('show_user_profile', 'opic_avatar_options');
 add_action('edit_user_profile', 'opic_avatar_options');
